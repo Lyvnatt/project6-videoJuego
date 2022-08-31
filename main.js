@@ -40,7 +40,7 @@ function setCanvasSize() {
     canvasSize = window.innerHeight * 0.7;
   }
 
-  canvasSize = Number(canvasSize.toFixed(2));
+  // canvasSize = Number(canvasSize.toFixed(0));
 
   canvas.setAttribute('width', canvasSize);
   canvas.setAttribute('height', canvasSize);
@@ -53,7 +53,7 @@ function setCanvasSize() {
 }
 
 function startGame() {
-  game.font = (elementSize - 10) + 'px Verdana';
+  game.font = (elementSize - 7) + 'px Verdana';
   game.textAlign = 'end';
 
   const map = maps[level];
@@ -106,6 +106,7 @@ function startGame() {
 function movePlayer (){
   const giftCollisionX = playerPosition.x.toFixed(3) == giftPosition.x.toFixed(3);
   const giftCollisionY = playerPosition.y.toFixed(3) == giftPosition.y.toFixed(3);
+
   const giftCollision = giftCollisionX && giftCollisionY;
 
   if(giftCollision) {
@@ -113,8 +114,8 @@ function movePlayer (){
   }
 
   const enemyCollision = enemyPositions.find(enemy => {
-    const enemyCollisiionX = enemy.x.toFixed(1) == playerPosition.x.toFixed(3);
-    const enemyCollisiionY = enemy.y.toFixed(1) == playerPosition.y.toFixed(3);
+    const enemyCollisiionX = enemy.x.toFixed(3) == playerPosition.x.toFixed(3);
+    const enemyCollisiionY = enemy.y.toFixed(3) == playerPosition.y.toFixed(3);
     return enemyCollisiionX && enemyCollisiionY;
   })
 
