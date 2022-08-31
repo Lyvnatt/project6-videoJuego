@@ -40,7 +40,7 @@ function setCanvasSize() {
     canvasSize = window.innerHeight * 0.7;
   }
 
-  // canvasSize = Number(canvasSize.toFixed(2));
+  canvasSize = Number(canvasSize.toFixed(2));
 
   canvas.setAttribute('width', canvasSize);
   canvas.setAttribute('height', canvasSize);
@@ -113,8 +113,8 @@ function movePlayer (){
   }
 
   const enemyCollision = enemyPositions.find(enemy => {
-    const enemyCollisiionX = enemy.x.toFixed(3) == playerPosition.x.toFixed(3);
-    const enemyCollisiionY = enemy.y.toFixed(3) == playerPosition.y.toFixed(3);
+    const enemyCollisiionX = enemy.x.toFixed(1) == playerPosition.x.toFixed(3);
+    const enemyCollisiionY = enemy.y.toFixed(1) == playerPosition.y.toFixed(3);
     return enemyCollisiionX && enemyCollisiionY;
   })
 
